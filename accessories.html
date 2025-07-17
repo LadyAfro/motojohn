@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Αξεσουάρ | MotoJohn</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Mobile tweaks: μόνο για οθόνες έως 480px -->
+  <style>
+    @media (max-width: 480px) {
+      /* 1) Hero: auto ύψος, full cover, scroll-attachment */
+      .accessory-hero {
+        background-attachment: scroll !important;
+        background-size: cover !important;
+        background-position: center top !important;
+        height: auto !important;
+        padding: 2rem 1rem !important;
+        margin-bottom: 1.5rem !important;
+      }
+      .accessory-hero-text h1 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+      }
+      .accessory-hero-text p {
+        font-size: 1rem !important;
+        margin-top: 0.5rem !important;
+      }
+
+      /* 2) Grid: 2 στήλες, gap 1rem */
+      .accessory-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+        padding: 1rem !important;
+      }
+      .accessory-grid .image-button {
+        width: 100% !important;
+        max-width: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <a href="moto.html" class="header-left">
+      <img src="images/motojohn-logo.jpg" class="logo-icon" alt="Logo" />
+      <div class="logo-text"><h1>Moto Repair Services</h1></div>
+    </a>
+    <nav class="header-nav">
+      <a href="moto.html">Αρχική</a>
+      <a href="moto.html#services">Υπηρεσίες</a>
+      <div class="dropdown">
+        <a href="#" class="dropbtn active">Προϊόντα</a>
+        <div class="dropdown-content">
+          <a href="accessories.html" class="active">Αξεσουάρ</a>
+          <a href="bikes.html">Ποδήλατα & Αξεσουάρ Ποδηλάτων</a>
+          <a href="parts.html">Ανταλλακτικά & Ελαστικά</a>
+          <a href="helmets.html">Κράνη</a>
+        </div>
+      </div>
+      <a href="moto.html#contact">Επικοινωνία</a>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <!-- Hero Banner Full Background -->
+    <section class="accessory-hero">
+      <div class="accessory-hero-overlay">
+        <div class="accessory-hero-text">
+          <h1>ΑΞΕΣΟΥΑΡ ΜΟΤΟΣΥΚΛΕΤΑΣ</h1>
+          <p>
+            Επιλεγμένα εξαρτήματα και προϊόντα υψηλής ποιότητας για κάθε αναβάτη.  
+            Όλα όσα χρειάζεσαι!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grid Καρτών Αξεσουάρ -->
+    <div class="accessory-grid">
+      <a href="exhausts/index.html" class="image-button slide-in-hidden">
+        <img src="images/EKSATMISI SUPRA-X INOX OVAL MAYRH MPOUKA PROTECHT 1.jpg" alt="Εξατμίσεις" />
+        <span>Εξατμίσεις</span>
+      </a>
+      <a href="bagkazieres.html" class="image-button slide-in-hidden">
+        <img src="images/givi_top_case_e52_maxia-0.jpg" alt="Μπαγκαζιέρες" />
+        <span>Μπαγκαζιέρες</span>
+      </a>
+      <a href="koukoules.html" class="image-button slide-in-hidden">
+        <img src="images/koukoula.png" alt="Κουκούλες Μηχανής" />
+        <span>Κουκούλες Μηχανής</span>
+      </a>
+      <a href="seles.html" class="image-button slide-in-hidden">
+        <img src="images/sela.jpeg" alt="Σέλες για Παπιά" />
+        <span>Σέλες για Παπιά</span>
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 MotoJohn</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('slide-in-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.slide-in-hidden').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

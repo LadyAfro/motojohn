@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ποδήλατα & Αξεσουάρ Ποδηλάτων | MotoJohn</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <a href="moto.html" class="header-left">
+      <img src="images/motojohn-logo.jpg" class="logo-icon" alt="Logo" />
+      <div class="logo-text"><h1>Moto Repair Services</h1></div>
+    </a>
+    <nav class="header-nav">
+      <a href="moto.html">Αρχική</a>
+      <a href="moto.html#services">Υπηρεσίες</a>
+      <div class="dropdown">
+        <a href="#" class="dropbtn active">Προϊόντα</a>
+        <div class="dropdown-content">
+          <a href="accessories.html">Αξεσουάρ</a>
+          <a href="bikes.html" class="active">Ποδήλατα &amp; Αξεσουάρ Ποδηλάτων</a>
+          <a href="parts.html">Ανταλλακτικά &amp; Ελαστικά</a>
+          <a href="helmets.html">Κράνη</a>
+        </div>
+      </div>
+      <a href="moto.html#contact">Επικοινωνία</a>
+    </nav>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="accessory-hero">
+    <div class="accessory-hero-overlay">
+      <div class="accessory-hero-text">
+        <h1>Ποδήλατα &amp; Αξεσουάρ Ποδηλάτων</h1>
+        <p>Επιλεγμένα ποδήλατα και αξεσουάρ υψηλής ποιότητας για κάθε αναβάτη.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main grid με δύο επιλογές -->
+  <main class="accessory-grid">
+    <a href="Bikesandaccesorries/bikess.html" class="image-button slide-in-hidden">
+      <img src="images/bike.jpg" alt="Ποδήλατα" />
+      <span>Ποδήλατα</span>
+    </a>
+    <a href="Bikesandaccesorries/accessories2.html" class="image-button slide-in-hidden">
+      <img src="images/ChatGPT Image 14 Ιουλ 2025, 07_14_21 μ.μ..png" alt="Αξεσουάρ Ποδηλάτων" />
+      <span>Αξεσουάρ Ποδηλάτων</span>
+    </a>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 MotoJohn</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('slide-in-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.slide-in-hidden').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>

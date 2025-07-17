@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Κράνη | MotoJohn</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ===== Slide-in Animation ===== */
+    .slide-in-hidden {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .slide-in-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== Mobile Tweaks (≤480px) ===== */
+    @media (max-width: 480px) {
+      /* Hero banner responsive */
+      .accessory-hero {
+        background-attachment: scroll !important;
+        background-size: cover !important;
+        background-position: center top !important;
+        height: auto !important;
+        padding: 2rem 1rem !important;
+        margin-bottom: 1.5rem !important;
+      }
+      .accessory-hero-text h1 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+      }
+      .accessory-hero-text p {
+        font-size: 1rem !important;
+        margin-top: 0.5rem !important;
+      }
+
+      /* Two-column grid για τα προϊόντα */
+      .mini-gallery-container {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1rem !important;
+        padding: 1rem !important;
+      }
+      .mini-gallery-container .product {
+        width: 100% !important;
+        max-width: none !important;
+        box-sizing: border-box;
+      }
+      .mini-gallery-container .product img {
+        width: 100% !important;
+        height: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <a href="moto.html" class="header-left">
+      <img src="images/motojohn-logo.jpg" class="logo-icon" alt="Logo" />
+      <div class="logo-text"><h1>Moto Repair Services</h1></div>
+    </a>
+    <nav class="header-nav">
+      <a href="moto.html">Αρχική</a>
+      <a href="moto.html#services">Υπηρεσίες</a>
+      <div class="dropdown">
+        <a href="#" class="dropbtn active">Προϊόντα</a>
+        <div class="dropdown-content">
+          <a href="accessories.html">Αξεσουάρ</a>
+          <a href="bikes.html">Ποδήλατα & Αξεσουάρ Ποδηλάτων</a>
+          <a href="parts.html">Ανταλλακτικά & Ελαστικά</a>
+          <a href="helmets.html" class="active">Κράνη</a>
+        </div>
+      </div>
+      <a href="moto.html#contact">Επικοινωνία</a>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main>
+
+    <!-- Hero Banner Full Background για Κράνη -->
+    <section class="accessory-hero helmets-hero">
+      <div class="accessory-hero-overlay">
+        <div class="accessory-hero-text">
+          <h1>ΚΡΑΝΗ</h1>
+          <p>Προστασία και στυλ με πιστοποιημένα κράνη για κάθε αναβάτη.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Title -->
+    <h2 class="section-title">Κράνη Μοτοσυκλέτας</h2>
+
+    <!-- Grid Products -->
+    <div class="mini-gallery-container">
+      <div class="product slide-in-hidden">
+        <img src="images/helmet1.jpg" alt="Κράνος 1" />
+        <p>Κράνος Ασφαλείας Μοντέλο 1<br>120€</p>
+      </div>
+      <div class="product slide-in-hidden">
+        <img src="images/helmet2.jpg" alt="Κράνος 2" />
+        <p>Κράνος Ασφαλείας Μοντέλο 2<br>140€</p>
+      </div>
+      <div class="product slide-in-hidden">
+        <img src="images/helmet3.jpg" alt="Κράνος 3" />
+        <p>Κράνος Ασφαλείας Μοντέλο 3<br>160€</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 MotoJohn</p>
+  </footer>
+
+  <!-- Scroll-in JS -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('slide-in-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.slide-in-hidden')
+            .forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

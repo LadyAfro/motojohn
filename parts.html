@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ανταλλακτικά & Ελαστικά | MotoJohn</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <a href="moto.html" class="header-left">
+      <img src="images/motojohn-logo.jpg" class="logo-icon" alt="Logo">
+      <div class="logo-text"><h1>Moto Repair Services</h1></div>
+    </a>
+    <nav class="header-nav">
+      <a href="moto.html">Αρχική</a>
+      <a href="moto.html#services">Υπηρεσίες</a>
+      <div class="dropdown">
+        <a href="#" class="dropbtn active">Προϊόντα</a>
+        <div class="dropdown-content">
+          <a href="accessories.html">Αξεσουάρ</a>
+          <a href="bikes.html">Ποδήλατα &amp; Αξεσουάρ Ποδηλάτων</a>
+          <a href="parts.html" class="active">Ανταλλακτικά &amp; Ελαστικά</a>
+          <a href="helmets.html">Κράνη</a>
+        </div>
+      </div>
+      <a href="moto.html#contact">Επικοινωνία</a>
+    </nav>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="accessory-hero parts-hero">
+    <div class="accessory-hero-overlay">
+      <div class="accessory-hero-text">
+        <h1>Ανταλλακτικά &amp; Ελαστικά</h1>
+        <p>Επιλεγμένα ανταλλακτικά και ελαστικά για κάθε μοτοσυκλέτα.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main grid με δύο επιλογές -->
+  <main class="accessory-grid">
+    <a href="antallaktika.html" class="image-button slide-in-hidden">
+      <img src="images/antallaktika.jpg" alt="Ανταλλακτικά">
+      <span>Ανταλλακτικά</span>
+    </a>
+    <a href="elastika.html" class="image-button slide-in-hidden">
+      <img src="images/elastika.jpg" alt="Ελαστικά">
+      <span>Ελαστικά</span>
+    </a>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 MotoJohn</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('slide-in-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.slide-in-hidden').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
