@@ -1138,50 +1138,31 @@ main {
   }
 }
 
-/* Μόνο σε κινητό (≤480px): 2 στήλες στο accessory-grid */
-.accessory-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  padding: 2rem 1rem;
-}
-
-/* ===========================
-   MOBILE TWEAKS ΓΙΑ ACCESSORIES
-   (max-width: 480px): 2 στήλες στο accessory-grid
-=========================== */
 @media (max-width: 480px) {
-  /* Hero: auto ύψος, όχι fixed background */
-  .accessory-hero {
-    background-attachment: scroll !important;
-    background-size: cover !important;
-    background-position: center top !important;
-    height: auto !important;
-    padding: 2rem 1rem !important;
-  }
-  .accessory-hero-text h1 {
-    font-size: 2rem !important;
-    line-height: 1.2 !important;
-  }
-  .accessory-hero-text p {
-    font-size: 1rem !important;
-    margin-top: 0.5rem !important;
-  }
-
-  /* 2 κάρτες ανα σειρά, με κενό 1rem */
   .accessory-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 1rem !important;
     padding: 1rem !important;
-    margin-top: 1.5rem !important;
-     justify-content: center;  
-    
+    transform: scale(0.9); /* ζουμ-άουτ */
+    transform-origin: top center;
   }
+
   .accessory-grid .image-button {
     width: 100% !important;
     max-width: none !important;
     margin: 0 !important;
-    
+  }
+
+  .accessory-grid .image-button img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain;
+  }
+
+  .accessory-grid .image-button span {
+    display: block !important;
+    margin-top: 0.25rem !important;
+    font-size: 0.85rem !important;
   }
 }

@@ -17,6 +17,8 @@
         height: auto !important;
         padding: 2rem 1rem !important;
         margin-bottom: 1.5rem !important;
+        
+        
       }
       .accessory-hero-text h1 {
         font-size: 2rem !important;
@@ -28,17 +30,35 @@
       }
 
       /* 2) Grid: 2 στήλες, gap 1rem */
-      .accessory-grid {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 1rem !important;
-        padding: 1rem !important;
-      }
+     .accessory-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;       /* πιο στενό κενό ανάμεσα στις κάρτες */
+    padding: 0.5rem !important;   /* λιγότερο padding γύρω από το grid */
+    margin-top: 1rem !important;
+  }
+
       .accessory-grid .image-button {
-        width: 100% !important;
-        max-width: none !important;
-      }
-    }
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0.5rem !important;     /* λιγότερο εσωτερικό κενό */
+    border: 1px solid #c00 !important; /* λεπτότερο κόκκινο περίγραμμα */
+    font-size: 0.9rem !important;   /* ελαφρώς μικρότερα γράμματα */
+  }
+  /* 4) Εικόνες: πάντα μέσα στην κάρτα, χωρίς overflow */
+  .accessory-grid .image-button img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain;
+  }
+
+  /* 5) Caption: μικρότερο διάστημα πάνω, μικρότερη γραμματοσειρά */
+  .accessory-grid .image-button span {
+    display: block !important;
+    margin-top: 0.25rem !important;
+    font-size: 0.85rem !important;
+  }
+}
   </style>
 </head>
 <body>
@@ -51,7 +71,7 @@
     </a>
     <nav class="header-nav">
       <a href="index.html">Αρχική</a>
-      <a href="moto.html#services">Υπηρεσίες</a>
+       <a href="#services">Υπηρεσίες</a>
       <div class="dropdown">
         <a href="#" class="dropbtn active">Προϊόντα</a>
         <div class="dropdown-content">
@@ -61,7 +81,7 @@
           <a href="helmets.html">Κράνη</a>
         </div>
       </div>
-      <a href="moto.html#contact">Επικοινωνία</a>
+       <a href="#contact">Επικοινωνία</a>
     </nav>
   </header>
 
